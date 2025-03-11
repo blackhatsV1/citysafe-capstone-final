@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+  <%- include('../partials/header'); %>
+</header>
+
+<main>
+  <div class="jumbotron mb-1 height">
+    <h1>Send Help</h1>  
+  </div>
+<div class="row">
+  <div class="col-sm-8">
+    <div class="jumbotron">
+      <h1>Location</h1>
+      <div>
+        <%- include('../partials/sendhelploc'); %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="well text-white">
+      <h3 class="mb-3">Send Your Help</h3>
+
+      <form action="/postrequest" method="POST">
+        
+        <label class="form-label mb-1">His/her name:</label>
+        <input class="form-control mb-3" type="text" name="name" placeholder="What's his/her Name" value="<%= name %>" required>
+
+        <label class="form-label mb-1">Location:</label>
+        <input class="form-control mb-3" type="text" name="location" placeholder="What's his/her Location" value="<%= location %>" required>
+        
+        <label class="form-label mb-1">Needs:</label>
+        <textarea class="form-control mb-3" name="request" placeholder="Their need" required><%= needs %></textarea>
+
+        <button class="btn btn-primary mb-3" type="submit">Send Help</button>
+    </form>
+    
+    </div>
+  </div>
+</div>
+</main>
+
+<footer>
+  <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>
